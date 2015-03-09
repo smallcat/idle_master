@@ -50,6 +50,10 @@ namespace IdleMaster
                 Properties.Settings.Default.minToTray = false;
             }
 
+            Properties.Settings.Default.delayTime = nudDelay.Value;
+
+            Properties.Settings.Default.delayMinutes = radDelayMinutes.Checked;
+
             Properties.Settings.Default.Save();
             this.Close();
         }
@@ -75,6 +79,9 @@ namespace IdleMaster
             {
                 chkMinToTray.Checked = true;
             }
+            radDelayMinutes.Checked = Properties.Settings.Default.delayMinutes;
+
+            nudDelay.Value = Properties.Settings.Default.delayTime;
         }
 
         private void btnAdvanced_Click(object sender, EventArgs e)

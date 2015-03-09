@@ -120,5 +120,29 @@ namespace IdleMaster.Properties {
                 this["blacklist"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public decimal delayTime {
+            get {
+                return ((decimal)(this["delayTime"]));
+            }
+            set {
+                this["delayTime"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool delayMinutes {
+            get {
+                return ((bool)(this["delayMinutes"]));
+            }
+            set {
+                this["delayMinutes"] = value;
+            }
+        }
     }
 }

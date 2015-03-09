@@ -41,8 +41,14 @@
             this.btnOK = new System.Windows.Forms.Button();
             this.ttHints = new System.Windows.Forms.ToolTip(this.components);
             this.btnAdvanced = new System.Windows.Forms.Button();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.nudDelay = new System.Windows.Forms.NumericUpDown();
+            this.radDelaySeconds = new System.Windows.Forms.RadioButton();
+            this.radDelayMinutes = new System.Windows.Forms.RadioButton();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
+            this.groupBox3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudDelay)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -125,7 +131,7 @@
             // 
             this.btnCancel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.btnCancel.Location = new System.Drawing.Point(261, 167);
+            this.btnCancel.Location = new System.Drawing.Point(261, 226);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(75, 23);
             this.btnCancel.TabIndex = 2;
@@ -136,7 +142,7 @@
             // btnOK
             // 
             this.btnOK.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnOK.Location = new System.Drawing.Point(180, 167);
+            this.btnOK.Location = new System.Drawing.Point(180, 226);
             this.btnOK.Name = "btnOK";
             this.btnOK.Size = new System.Drawing.Size(75, 23);
             this.btnOK.TabIndex = 3;
@@ -146,8 +152,9 @@
             // 
             // btnAdvanced
             // 
+            this.btnAdvanced.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.btnAdvanced.Image = global::IdleMaster.Properties.Resources.imgLock;
-            this.btnAdvanced.Location = new System.Drawing.Point(12, 167);
+            this.btnAdvanced.Location = new System.Drawing.Point(12, 226);
             this.btnAdvanced.Name = "btnAdvanced";
             this.btnAdvanced.Size = new System.Drawing.Size(25, 23);
             this.btnAdvanced.TabIndex = 4;
@@ -155,13 +162,57 @@
             this.btnAdvanced.UseVisualStyleBackColor = true;
             this.btnAdvanced.Click += new System.EventHandler(this.btnAdvanced_Click);
             // 
+            // groupBox3
+            // 
+            this.groupBox3.Controls.Add(this.radDelayMinutes);
+            this.groupBox3.Controls.Add(this.nudDelay);
+            this.groupBox3.Controls.Add(this.radDelaySeconds);
+            this.groupBox3.Location = new System.Drawing.Point(13, 169);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(322, 47);
+            this.groupBox3.TabIndex = 5;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "Next Game Delay (+/-20%)";
+            // 
+            // nudDelay
+            // 
+            this.nudDelay.AutoSize = true;
+            this.nudDelay.Location = new System.Drawing.Point(7, 19);
+            this.nudDelay.Maximum = new decimal(180);
+            this.nudDelay.Name = "nudDelay";
+            this.nudDelay.Size = new System.Drawing.Size(48, 20);
+            this.nudDelay.TabIndex = 0;
+            // 
+            // radDelaySeconds
+            // 
+            this.radDelaySeconds.AutoSize = true;
+            this.radDelaySeconds.Checked = true;
+            this.radDelaySeconds.Location = new System.Drawing.Point(61, 19);
+            this.radDelaySeconds.Name = "radDelaySeconds";
+            this.radDelaySeconds.Size = new System.Drawing.Size(67, 17);
+            this.radDelaySeconds.TabIndex = 1;
+            this.radDelaySeconds.TabStop = true;
+            this.radDelaySeconds.Text = "Seconds";
+            this.radDelaySeconds.UseVisualStyleBackColor = true;
+            // 
+            // radDelayMinutes
+            // 
+            this.radDelayMinutes.AutoSize = true;
+            this.radDelayMinutes.Location = new System.Drawing.Point(134, 19);
+            this.radDelayMinutes.Name = "radDelayMinutes";
+            this.radDelayMinutes.Size = new System.Drawing.Size(62, 17);
+            this.radDelayMinutes.TabIndex = 2;
+            this.radDelayMinutes.Text = "Minutes";
+            this.radDelayMinutes.UseVisualStyleBackColor = true;
+            // 
             // frmSettings
             // 
             this.AcceptButton = this.btnOK;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.btnCancel;
-            this.ClientSize = new System.Drawing.Size(348, 202);
+            this.ClientSize = new System.Drawing.Size(348, 261);
+            this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.btnAdvanced);
             this.Controls.Add(this.btnOK);
             this.Controls.Add(this.btnCancel);
@@ -178,6 +229,9 @@
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
+            this.groupBox3.ResumeLayout(false);
+            this.groupBox3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudDelay)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -195,5 +249,9 @@
         private System.Windows.Forms.RadioButton radIdleMostValue;
         private System.Windows.Forms.Button btnAdvanced;
         private System.Windows.Forms.ToolTip ttHints;
+        private System.Windows.Forms.GroupBox groupBox3;
+        private System.Windows.Forms.NumericUpDown nudDelay;
+        private System.Windows.Forms.RadioButton radDelayMinutes;
+        private System.Windows.Forms.RadioButton radDelaySeconds;
     }
 }

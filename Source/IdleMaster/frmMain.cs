@@ -454,12 +454,15 @@ namespace IdleMaster
                         // Give the user notification that the next game will start soon
                         lblCurrentStatus.Text = "Loading next game...";
 
-                        // Make a short but random amount of time pass
-                        Random rand = new Random();
-                        int wait = rand.Next(3, 9);
-                        wait = wait * 1000;
+                        // Delay idling the next game by the user specified value
+                        decimal wait = Properties.Settings.Default.delayTime * 1000;
+                        if (Properties.Settings.Default.delayMinutes) { wait *= 60; }
 
-                        tmrStartNext.Interval = wait;
+                        // Add a random value (max 20%) +/- to the delay time
+                        Random rand = new Random();
+                        wait += rand.Next(0 - (int)wait / 5, (int)wait / 5);
+
+                        tmrStartNext.Interval = Convert.ToInt32(wait);
                         tmrStartNext.Enabled = true;
                     }
                     else
